@@ -1,8 +1,19 @@
-import React from 'react'
+import Form from "./Form"
+
 
 const AppLetters = () => {
   return (
-    <div>Hello World</div>
+    <>
+        <header>Letter Finder App</header>
+
+
+
+        <Form/>
+
+        <main>
+            
+        </main>
+    </>
   )
 }
 
