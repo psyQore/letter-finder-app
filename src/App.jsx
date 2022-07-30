@@ -1,11 +1,13 @@
-import { useState } from 'react'
-import AppLetters from './components/AppLetters'
+import { useState } from "react";
+import AppLetters from "./components/AppLetters";
+import { LettersProvider } from "./context/LettersProvider";
 
 function App() {
-
   return (
-    <AppLetters/>
-  )
+    <LettersProvider>
+      <AppLetters />
+    </LettersProvider>
+  );
 }
 
-export default App
+export default App;
