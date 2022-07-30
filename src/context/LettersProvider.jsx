@@ -3,17 +3,15 @@ import { useState, createContext } from "react";
 const LettersContetx = createContext();
 
 const LettersProvider = ({ children }) => {
+  const [alert, setAlert] = useState("");
 
+  return (
+    <LettersContetx.Provider value={{ alert, setAlert }}>
+      {children}
+    </LettersContetx.Provider>
+  );
+};
 
-    return (
-        <LettersContetx.Provider value={{}}>
-            { children }
-        </LettersContetx.Provider>
-    )
-}
-
-export {
-    LettersProvider
-}
+export { LettersProvider };
 
 export default LettersContetx;
