@@ -2,7 +2,7 @@ import { useState } from "react";
 import useLetters from "../hooks/useLetters";
 
 const Form = () => {
-  const { setAlert } = useLetters();
+  const { setAlert, searchLetter } = useLetters();
 
   const [search, setSearch] = useState({
     artist: "",
@@ -17,7 +17,9 @@ const Form = () => {
       return;
     }
 
+    searchLetter(search)
     setAlert("");
+    
   };
 
   return (
