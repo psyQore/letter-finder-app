@@ -1,0 +1,19 @@
+.cleanButton {
+    background-color: #00b3ff;
+    border: none;
+    border-radius: .5rem;
+    font-size: 1.3rem;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-family: 'Fredoka', sans-serif;
+    color: white;
+    padding: .8rem;
+    display: block;
+    width: 100%;
+    margin-top: 2rem;
+    cursor: pointer;
+}
+
+.cleanButton:hover{
+    background-color: #006e9e;
+}

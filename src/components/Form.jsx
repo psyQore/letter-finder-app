@@ -1,8 +1,9 @@
 import { useState } from "react";
 import useLetters from "../hooks/useLetters";
+import "../styles/Button.css"
 
 const Form = () => {
-  const { setAlert, searchLetter } = useLetters();
+  const { setAlert, searchLetter, setLyric} = useLetters();
 
   const [search, setSearch] = useState({
     artist: "",
@@ -21,6 +22,14 @@ const Form = () => {
     setAlert("");
     
   };
+
+  const cleanSearch = () => {
+    setSearch({
+        artist: "",
+        song: ""
+    })
+    setLyric("")
+  }
 
   return (
     <form onSubmit={handleSubmit}>
@@ -58,6 +67,7 @@ const Form = () => {
         </div>
         <input type="submit" value="buscar" />
       </div>
+        <button className="cleanButton" onClick={cleanSearch}>Limpiar</button>
     </form>
   );
 };

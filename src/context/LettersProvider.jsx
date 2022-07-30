@@ -5,20 +5,23 @@ const LettersContetx = createContext();
 
 const LettersProvider = ({ children }) => {
   const [alert, setAlert] = useState("");
-  const [lyrics, setLyrics] = useState("");
+  const [lyric, setLyric] = useState("");
+  const [loading, setLoading] = useState(false);
 
   const searchLetter = async (search) => {
     // console.log(search)
 
     const { artist, song } = search;
+    setLoading(true);
     try {
       const url = `https://api.lyrics.ovh/v1/${artist}/${song}`;
       const { data } = await axios(url);
-
-      setLyrics(data.lyrycs);
+      setLyric(data.lyrics);
+      setAlert("");
     } catch (error) {
-      console.log(error);
+      setAlert("Canción No Encontrada");
     }
+    setLoading(false);
   };
 
   return (
@@ -27,6 +30,10 @@ const LettersProvider = ({ children }) => {
         alert,
         setAlert,
         searchLetter,
+        lyric,
+        loading,
+        setLoading,
+        setLyric,
       }}
     >
       {children}
